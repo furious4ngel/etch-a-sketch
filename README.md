@@ -5,7 +5,7 @@ This project is part of The Odin Project curriculum.
 
 ## What I learned
 ### HTML
-I only used ID's for elements to be changed with JavaScript. All elements that were to be styled had a class.
+I only used ID attributes for elements to be changed with JavaScript. All elements that were to be styled had a class attribute.
 
 ### CSS
 I styled focusable elements to make sure that their style was apparent for disabled users. I also used linear gradients for a specific button element.
