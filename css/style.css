@@ -75,6 +75,7 @@
 
 .grid-area,
 .button {
+  -webkit-border-radius: 0.3rem;
   border-radius: 0.3rem;
 }
 
