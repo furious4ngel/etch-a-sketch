@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: 0.3rem solid hsl(30, 90%, 20%);
+  border-radius: 0.3rem;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.html {
+  height: 100vh;
+}
+
+.body {
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 40rem;
+  background-color: hsl(30, 90%, 80%);
+}
+
+/* Related Styles */
+.body,
+.content-container,
+.button-container,
+.custom-pen-button {
+  display: flex;
+}
+
+.main,
+.pen-color {
+  flex: 1;
+}
+
+.content-container,
+.button-container,
+.custom-pen-button {
+  flex-wrap: wrap;
+}
+
+.content-container,
+.button-container {
+  gap: 1rem;
+}
+
+.title,
+.subtitle {
+  margin: 0;
+}
+
+.grid-area,
+.button-container {
+  width: 100%;
+}
+
+.body,
+.button {
+  font-family: 'Pangolin', sans-serif;
+}
+
+.subtitle,
+.footer-text {
+  line-height: 1.5;
+}
+
+.grid-area,
+.rainbow-pen-button {
+  background-color: hsl(0, 100%, 100%);
+}
+
+.grid-area,
+.button {
+  border-radius: 0.3rem;
+}
+
+.grid-lines-button,
+.new-sketch-button {
+  color: hsl(0, 100%, 100%);
+}
+
+.button,
+.pen-color {
+  cursor: pointer;
+}
+
+/* Header */
+.header {
+  padding: 1.5rem 0;
+  max-width: 60ch;
+}
+
+/* Grid Area */
+.grid-area {
+  display: grid;
+  outline: 0.3rem solid hsl(0, 0%, 0%);
+  aspect-ratio: 1 / 1;
+}
+
+.grid-lines {
+  border: 0.1rem solid hsl(0, 0%, 0%);
+}
+
+/* Buttons */
+.button-container {
+  justify-content: center;
+}
+
+.button {
+  height: 3rem;
+  padding: 0.1rem 0.5rem;
+  width: 10rem;
+  font-size: 1.1em;
+  transition:
+      background-color 125ms,
+      transform 200ms,
+      opacity 125ms;
+}
+
+.custom-pen-button {
+  align-items: center;
+  gap: 0.5rem;
+  background-color: hsl(199, 75%, 50%);
+  border: 0.3rem solid hsl(199, 75%, 30%);
+}
+
+.pen-color {
+  height: 2rem;
+  padding: 0;
+  background-color: transparent;
+  border: transparent;
+}
+
+.rainbow-pen-button {
+  border: 0.3rem solid hsl(0, 0%, 0%);
+}
+
+.eraser-button {
+  background-color: hsl(41, 100%, 60%);
+  border: 0.3rem solid hsl(41, 100%, 40%);
+}
+
+.grid-lines-button {
+  background-color: hsl(291, 50%, 40%);
+  border: 0.3rem solid hsl(291, 50%, 20%);
+}
+
+.new-sketch-button {
+  background-color: hsl(3, 100%, 30%);
+  border: 0.3rem solid hsl(3, 100%, 10%);
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.custom-pen-button:active {
+  background-color: hsl(199, 75%, 40%);
+}
+
+.rainbow-pen-button:active {
+  opacity: 0.85;
+}
+
+.eraser-button:active {
+  background-color: hsl(41, 100%, 50%);
+}
+
+.grid-lines-button:active {
+  background-color: hsl(291, 50%, 30%);
+}
+
+.new-sketch-button:active {
+  background-color: hsl(5, 100%, 20%);
+}
+
+.rainbow-pen-button--selected {
+  background:
+      linear-gradient(0deg, hsla(0, 100%, 50%, 0), hsla(0, 100%, 50%, 0.5) 80%),
+      linear-gradient(90deg, hsla(115, 100%, 20%, 0), hsla(115, 100%, 50%, 0.5) 80%),
+      linear-gradient(180deg, hsla(240, 100%, 50%, 0), hsla(240, 100%, 50%, 0.5) 80%);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+}
+
+.github-link {
+  margin: 0 0.15rem;
+  color: hsl(0, 0%, 0%);
+}
+
+.github-link:hover {
+  text-decoration-line: none;
+}
