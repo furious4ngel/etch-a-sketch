@@ -1,0 +1,17 @@
+# Etch-A-Sketch
+This project is a browser version of an Etch-A-Sketch/sketchpad. It uses HTML, CSS, and JavaScript to create artwork. The user can hover their cursor across a grid to "draw" something.
+
+This project is part of The Odin Project curriculum.
+
+## What I learned
+### HTML
+I only used ID's for elements to be changed with JavaScript. All elements that were to be styled had a class.
+
+### CSS
+I styled focusable elements to make sure that their style was apparent for disabled users. I also used linear gradients for a specific button element.
+
+### JavaScript
+This time around, I believe I did a better job of separating tasks into their own function, no matter how simple or short the task was. I also used named functions for just about the entire script, for better readability and easier debugging. Further, I feel I have a better grasp on changing the DOM. I knew the elements I needed to target, and which functions needed to manipulate them.
+
+## Continuing My Learning
+I am still learning how to use words to clearly describe what elements are and what functions do.
