@@ -8,8 +8,8 @@ const newSketchButton = document.querySelector('#new-sketch-button');
 function setGridArea(side) {
   let area = side * side;
   for (let i = 0; i < area; i++) {
-    const div = document.createElement('div');
-    gridArea.appendChild(div);
+    const square = document.createElement('div');
+    gridArea.appendChild(square);
   }
   setGridAreaCSS(side);
 }
