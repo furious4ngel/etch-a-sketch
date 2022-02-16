@@ -78,6 +78,13 @@
   border-radius: 0.3rem;
 }
 
+.custom-pen-button,
+.rainbow-pen-button,
+.eraser-button,
+.github-link {
+  color: hsl(0, 0%, 0%);
+}
+
 .grid-lines-button,
 .new-sketch-button {
   color: hsl(0, 100%, 100%);
@@ -196,7 +203,6 @@ img {
 
 .github-link {
   margin: 0 0.15rem;
-  color: hsl(0, 0%, 0%);
 }
 
 .github-link:hover {
