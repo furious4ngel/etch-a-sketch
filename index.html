@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="html">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pangolin">
+  <link rel="icon" type="image/icon-x" href="img/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Etch-A-Sketch</title>
+</head>
+<body class="body">
+  <header class="header">
+    <h1 class="title">Etch-A-Sketch</h1>
+    <p class="subtitle">
+      Choose a color for the custom pen, then hover your cursor over
+      the grid to start &#8220;etching&#8221;.
+    </p>
+  </header>
+  <main class="main">
+    <div class="content-container">
+      <div id="grid-area" class="grid-area"></div>
+      <div class="button-container">
+        <label for="pen-color" id="custom-pen-button" class="button custom-pen-button">
+          Custom Pen
+          <input id="pen-color" class="pen-color" type="color">
+        </label>
+        <button id="rainbow-pen-button" class="button rainbow-pen-button">Rainbow Pen</button>
+        <button id="eraser-button" class="button eraser-button">Eraser: OFF</button>
+        <button id="grid-lines-button" class="button grid-lines-button">Grid Lines: OFF</button>
+        <button id="new-sketch-button" class="button new-sketch-button">New Sketch</button>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="footer-text">Created by
+      <a href="https://github.com/t4rantino" class="github-link">t4rantino</a>
+    </p>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
