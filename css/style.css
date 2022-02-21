@@ -4,7 +4,6 @@
 
 :focus {
   outline: 0.3rem solid hsl(30, 90%, 20%);
-  border-radius: 0.3rem;
 }
 
 :focus:not(:focus-visible) {
@@ -130,6 +129,7 @@
   border: 0.3rem solid hsl(199, 75%, 30%);
 }
 
+/* Hide Chrome's color picker */
 img {
   display: none;
 }
