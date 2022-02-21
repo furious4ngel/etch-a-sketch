@@ -88,7 +88,6 @@ function clearGridArea() {
 
 function setGridAreaCSS(side) {
   gridArea.style.gridTemplateColumns = `repeat(${side}, 1fr)`;
-  gridArea.style.userSelect = 'none';
 }
 
 function setRainbowPenButtonCSS() {
