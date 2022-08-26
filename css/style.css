@@ -1,205 +1,177 @@
-* {
-  box-sizing: border-box;
-}
-
-:focus {
-  outline: 0.3rem solid hsl(30, 90%, 20%);
-}
-
-:focus:not(:focus-visible) {
-  outline: none;
-}
-
-.html {
-  height: 100vh;
-}
-
-.body {
-  flex-direction: column;
+html {
   height: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
-  max-width: 38rem;
-  background-color: hsl(30, 90%, 80%);
+  min-width: 17.5rem;
 }
 
-/* Related Styles */
-.body,
-.content-container,
-.button-container,
-.custom-pen-button {
-  display: flex;
-}
-
-.main,
-.pen-color {
-  flex: 1;
-}
-
-.content-container,
-.button-container,
-.custom-pen-button {
-  flex-wrap: wrap;
-}
-
-.content-container,
-.button-container {
-  gap: 1rem;
-}
-
-.title,
-.subtitle {
-  margin: 0;
-}
-
-.grid-area,
-.button-container {
-  width: 100%;
-}
-
-.body,
 .button {
-  font-family: 'Pangolin', sans-serif;
-}
-
-.subtitle,
-.footer-text {
-  line-height: 1.5;
-}
-
-.grid-area,
-.rainbow-pen-button {
-  background-color: hsl(0, 100%, 100%);
-}
-
-.custom-pen-button,
-.rainbow-pen-button,
-.eraser-button,
-.github-link {
-  color: hsl(0, 0%, 0%);
-}
-
-.grid-lines-button,
-.new-sketch-button {
-  color: hsl(0, 100%, 100%);
-}
-
-.button,
-.pen-color {
   cursor: pointer;
 }
 
-/* Header */
-.header {
-  padding: 1.5rem 0;
-  max-width: 60ch;
-}
-
-/* Grid Area */
-.grid-area {
-  display: grid;
-  outline: 0.3rem solid hsl(0, 0%, 0%);
-  aspect-ratio: 1 / 1;
-}
-
-.grid-lines {
-  border: 0.1rem solid hsl(0, 0%, 0%);
-}
-
-/* Buttons */
-.button-container {
-  justify-content: center;
-}
-
-.button {
-  height: 3rem;
-  padding: 0.1rem 0.5rem;
-  width: 10rem;
-  font-size: 1.1em;
+.button--is-hovered {
   transition:
-      background-color 125ms,
-      transform 200ms,
-      opacity 125ms;
+    background-color 200ms ease-out,
+    color 100ms ease-out,
+    outline-offset 150ms ease-in-out;
 }
 
-.custom-pen-button {
-  align-items: center;
-  gap: 0.5rem;
-  background-color: hsl(199, 75%, 50%);
-  border: 0.3rem solid hsl(199, 75%, 30%);
-}
-
-/* Hide Chrome's color picker */
-img {
-  display: none;
-}
-
-.pen-color {
-  height: 2rem;
-  padding: 0;
-  background-color: transparent;
-  border: transparent;
-}
-
-.rainbow-pen-button {
-  border: 0.3rem solid hsl(0, 0%, 0%);
-}
-
-.eraser-button {
-  background-color: hsl(41, 100%, 60%);
-  border: 0.3rem solid hsl(41, 100%, 40%);
-}
-
-.grid-lines-button {
-  background-color: hsl(291, 50%, 40%);
-  border: 0.3rem solid hsl(291, 50%, 20%);
-}
-
-.new-sketch-button {
-  background-color: hsl(3, 100%, 30%);
-  border: 0.3rem solid hsl(3, 100%, 10%);
+.link--is-hovered {
+  transition:
+    outline-offset 125ms ease-in-out,
+    transform 150ms ease-in-out;
 }
 
 .button:hover {
-  transform: scale(1.05);
+  background-color: #ddd;
 }
 
-.custom-pen-button:active {
-  background-color: hsl(199, 75%, 40%);
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100%;
+  padding: 1rem;
+  background-color: #ccc;
 }
 
-.rainbow-pen-button:active {
-  opacity: 0.85;
+.header {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 47rem;
 }
 
-.eraser-button:active {
-  background-color: hsl(41, 100%, 50%);
+main {
+  display: flex;
+  align-content: flex-end;
+  flex: 1;
+  flex-wrap: wrap-reverse;
+  gap: 1.25rem;
+  justify-content: center;
 }
 
-.grid-lines-button:active {
-  background-color: hsl(291, 50%, 30%);
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.new-sketch-button:active {
-  background-color: hsl(5, 100%, 20%);
+.button-group__button {
+  padding: 0.35em 0.6em;
+  position: relative;
+  font-size: clamp(0.8em, 5vw, 1.3em);
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0.0625em 0.0625em 0 0.03125em #939393;
+  color: #000;
 }
 
-.rainbow-pen-button--selected {
+.button-group__button:focus {
+  outline: 0.125em solid #000;
+  outline-offset: 0.2em;
+}
+
+.button-group__button--color-select {
+  color: transparent;
+}
+
+.button-group__button--new-sketch:active {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.button-group__color-input {
+  height: 1em;
+  position: absolute;
+  top: 27%;
+  left: 27%;
+  width: 1em;
+  z-index: -1;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  transition: outline-offset 150ms ease-in-out;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.button-group__color-input:focus {
+  outline: 0.125em solid #000;
+  outline-offset: 0.8em;
+}
+
+.button-group__color-input img {
+  position: absolute;
+  bottom: -0.25em;
+}
+
+.modal-header span:before {
+  margin: 0 0.5em 0 0;
+}
+
+.confirm-new-sketch-modal__icon::before {
+  color: #dc3545;
+}
+
+.grid-area {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 43rem;
+  background-color: #fff;
+  cursor: crosshair;
+  outline: 3px solid #b5e3ee;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.footer__container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 47rem;
+}
+
+.footer__link {
+  display: block;
+  margin-left: auto;
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: 50%;
+}
+
+.footer__link:focus {
+  outline: 0.125em solid #000;
+  outline-offset: 0.2em;
+}
+
+.footer__link:hover {
+  transform: rotate(-40deg);
+}
+
+/* Interactive classes */
+.grid-area__square.show-grid {
+  border: 0.0625em dotted #b5e3ee;
+}
+
+.button-group__button--black.active {
+  background-color: #000;
+  color: #fff;
+}
+
+.button-group__button--rainbow.active {
+  text-shadow: 0 0 0.125em;
   background:
-      linear-gradient(0deg, hsla(0, 100%, 50%, 0), hsla(0, 100%, 50%, 0.5) 80%),
-      linear-gradient(90deg, hsla(115, 100%, 20%, 0), hsla(115, 100%, 50%, 0.5) 80%),
-      linear-gradient(180deg, hsla(240, 100%, 50%, 0), hsla(240, 100%, 50%, 0.5) 80%);
+    linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, .8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+  background-repeat: no-repeat;
+  color: #fff;
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-}
-
-.github-link {
-  margin: 0 0.15rem;
-}
-
-.github-link:hover {
-  text-decoration-line: none;
+.button-group__button--grid-lines.active {
+  background-color: #000;
+  color: #b5e3ee;
 }

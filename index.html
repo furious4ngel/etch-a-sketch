@@ -1,41 +1,122 @@
 <!DOCTYPE html>
-<html lang="en" class="html">
-<head>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pangolin">
-  <link rel="icon" type="image/icon-x" href="img/favicon.ico">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Etch-A-Sketch</title>
-</head>
-<body class="body">
-  <header class="header">
-    <h1 class="title">Etch-A-Sketch</h1>
-    <p class="subtitle">
-      Choose a color for the custom pen, then hover your cursor over
-      the grid to start &#8220;etching&#8221; (on touchscreen devices, tap the grid instead).
-    </p>
-  </header>
-  <main class="main">
-    <div class="content-container">
-      <div id="grid-area" class="grid-area"></div>
-      <div class="button-container">
-        <label for="pen-color" id="custom-pen-button" class="button custom-pen-button">
-          Custom Pen
-          <input id="pen-color" class="pen-color" type="color">
-        </label>
-        <button id="rainbow-pen-button" class="button rainbow-pen-button">Rainbow Pen</button>
-        <button id="eraser-button" class="button eraser-button">Eraser: OFF</button>
-        <button id="grid-lines-button" class="button grid-lines-button">Grid Lines: OFF</button>
-        <button id="new-sketch-button" class="button new-sketch-button">New Sketch</button>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="x-image/icon" href="img/favicon.ico">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Etch-A-Sketch</h1>
+      <p>Choose a color, a tool, and drag your pointer around the drawing area to start
+        sketching.</p>
+    </header>
+    <main>
+      <ul id="button-group" class="button-group flex-lg-column justify-content-lg-start" role="group"
+        aria-label="Tools">
+        <li class="mb-lg-5">
+          <button id="new-sketch-button" type="button"
+            class="button button--is-hovered button-group__button button-group__button--new-sketch bi bi-file-earmark-plus"
+            aria-label="Start over" data-bs-toggle="modal" data-bs-target="#confirm-new-sketch-modal"></button>
+        </li>
+        <li>
+          <label id="color-display" for="color-input"
+            class="button button-group__button button-group__button--color-select bi bi-palette-fill">
+            <input id="color-input" class="button-group__color-input" type="color" aria-labelledby="color-display">
+          </label>
+        </li>
+        <li>
+          <button id="pencil-button"
+            class="button button--is-hovered button-group__button button-group__button--black bi bi-pencil"
+            aria-label="Pencil off"></button>
+        </li>
+        <li>
+          <button id="rainbow-pen-button" type="button"
+            class="button button--is-hovered button-group__button button-group__button--rainbow bi bi-rainbow"
+            aria-label="Rainbow pen off"></button>
+        </li>
+        <li>
+          <button id="bucket-button"
+            class="button button--is-hovered button-group__button button-group__button--black bi bi-paint-bucket"
+            aria-label="Bucket off"></button>
+        </li>
+        <li>
+          <button id="eraser-button" type="button"
+            class="button button--is-hovered button-group__button button-group__button--black bi bi-eraser"
+            aria-label="Eraser off"></button>
+        </li>
+        <li>
+          <button id="grid-lines-button" type="button"
+            class="button button--is-hovered button-group__button button-group__button--grid-lines bi bi-border-outer"
+            aria-label="Show grid lines"></button>
+        </li>
+      </ul>
+      <div id="confirm-new-sketch-modal" class="modal confirm-new-sketch-modal fade" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="confirm-new-sketch-modal-header" aria-describedby="confirm-new-sketch-content"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span id="confirm-new-sketch-modal-header"
+                class="confirm-new-sketch-modal__icon fs-4 bi bi-exclamation-triangle-fill">Start new
+                sketch?</span>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <span id="confirm-new-sketch-content">Are you sure you want to start a new sketch? Your existing sketch
+                will not be
+                saved.</span>
+            </div>
+            <div class="modal-footer">
+              <button id="close-confirm-new-sketch-modal-button" type="button" class="btn btn-primary"
+                data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                data-bs-target="#enter-side-modal">New</button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </main>
-  <footer class="footer">
-    <p class="footer-text">Created by
-      <a href="https://github.com/t4rantino" class="github-link">t4rantino</a>
-    </p>
-  </footer>
-  <script src="js/script.js"></script>
-</body>
+      <div id="enter-side-modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="enter-side-modal-heading" aria-describedby="enter-side-content" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span id="enter-side-modal-heading" class="fs-4 bi bi-file-earmark-plus">Create a
+                grid</span>
+            </div>
+            <div class="modal-body">
+              <label id="enter-side-content" for="side" class="form-label">Enter a side length for the area of the
+                grid.</label>
+              <input id="side-value" class="form-control" type="number" min="2" max="64" aria-describedby="range">
+              <div id="range" class="form-text">
+                Must be a number between 2 and 64, inclusive.
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button id="confirm-side-button" type="button" class="btn btn-primary text-uppercase"
+                data-bs-dismiss="modal">Ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="grid-area" class="grid-area"></div>
+    </main>
+    <footer>
+      <div class="footer__container">
+        <a class="footer__link link--is-hovered" href="https://github.com/t4rantino/etch-a-sketch">
+          <img class="w-100" src="img/github.svg" alt="GitHub">
+        </a>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+      </script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
