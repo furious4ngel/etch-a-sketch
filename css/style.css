@@ -69,6 +69,48 @@ main {
   color: #000;
 }
 
+.button-group__button::after {
+  padding: 0.2em 0.8em;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 200%);
+  z-index: 1;
+  font-size: 60%;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #000;
+  border-radius: 0.3em;
+  color: #f1f1f1;
+}
+
+.button-group__button--new-sketch:hover::after {
+  content: "New";
+}
+
+.button-group__button--color-select:hover::after {
+  content: "Color";
+}
+
+.button-group__button--pencil:hover::after {
+  content: "Pencil";
+}
+
+.button-group__button--rainbow:hover::after {
+  content: "Rainbow";
+}
+
+.button-group__button--bucket:hover::after {
+  content: "Bucket";
+}
+
+.button-group__button--eraser:hover::after {
+  content: "Eraser";
+}
+
+.button-group__button--grid-lines:hover::after {
+  content: "Grid Lines";
+}
+
 .button-group__button:focus {
   outline: 0.125em solid #000;
   outline-offset: 0.2em;
@@ -171,7 +213,19 @@ main {
   color: #fff;
 }
 
+.button-group__button--rainbow.active::after {
+  text-shadow: none;
+}
+
 .button-group__button--grid-lines.active {
   background-color: #000;
   color: #b5e3ee;
+}
+
+@media only screen and (min-width: 992px) {
+  .button-group__button::after {
+    top: 25%;
+    left: 120%;
+    transform: translate(0, 0);
+  }
 }
