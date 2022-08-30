@@ -17,11 +17,6 @@ This time around, I believe I did a better job of separating tasks into their ow
 I am still learning how to use words to clearly describe what elements are and what functions do.
 
 ## What's New?
-### HTML
 I added a fill tool that sets the color of every square in the grid. Also, the pencil tool doesn't contain the color input.
-
-### CSS
 I tried to use the BEM method for naming classes (I like it). Also, the page design is different.
-
-### JS
 The user can click the grid instead of hovering over it to draw. I think this grants the user more control over what they draw.
