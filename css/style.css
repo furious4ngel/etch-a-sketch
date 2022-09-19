@@ -145,9 +145,9 @@ main {
   outline-offset: 0.8em;
 }
 
-.button-group__color-input img {
+.button-group__button--color-select img {
   position: absolute;
-  bottom: -0.25em;
+  bottom: 0;
 }
 
 .modal-header span:before {
